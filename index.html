@@ -14,12 +14,16 @@
       --red-dim:#D9B8B5;--blue-dim:#B8CEDF;--green-dim:#B8D0BC;
     }
     body{font-family:'Courier Prime',Courier,monospace;background:var(--cream);color:var(--brown);min-height:100vh}
+
+    /* ── HEADER ── */
     .vp-header{padding:1.5rem 2.75rem;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--brown)}
-    .vp-logo{font-size:1.5rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown)}
+    .vp-logo{font-size:1.5rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown);cursor:pointer}
     .vp-logo-bar{display:inline-block;width:8px;height:1.1em;background:var(--red);margin:0 5px;vertical-align:middle;position:relative;top:-1px}
     .vp-nav{display:flex;gap:2rem;list-style:none}
-    .vp-nav a{font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color 0.15s}
+    .vp-nav a{font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color 0.15s;cursor:pointer}
     .vp-nav a:hover{color:var(--blue)}
+
+    /* ── HOMEPAGE ── */
     .vp-hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--brown)}
     .vp-hero-left{padding:3.5rem 2.75rem;border-right:2px solid var(--brown)}
     .vp-hero-label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:1rem}
@@ -27,22 +31,24 @@
     .vp-hero-title .r{color:var(--red)}
     .vp-hero-title .b{color:var(--blue)}
     .vp-hero-body{font-size:0.9rem;line-height:1.9;color:var(--brown-mid);margin-bottom:2rem;max-width:400px}
-    .vp-btn{display:inline-block;background:var(--brown);color:var(--cream);font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.6rem;text-decoration:none;border:2px solid var(--brown);transition:background 0.15s,color 0.15s}
+    .vp-btn{display:inline-block;background:var(--brown);color:var(--cream);font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.6rem;text-decoration:none;border:2px solid var(--brown);transition:background 0.15s,color 0.15s;cursor:pointer}
     .vp-btn:hover{background:var(--red);border-color:var(--red)}
     .vp-hero-right{display:grid;grid-template-rows:1fr 1fr}
-    .vp-geo-top{background:var(--blue-dim);border-bottom:2px solid var(--brown);padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden}
-    .vp-geo-circle{position:absolute;right:-30px;bottom:-30px;width:130px;height:130px;border-radius:50%;background:var(--red);opacity:0.45}
+    .vp-geo-top{background:var(--blue-dim);border-bottom:2px solid var(--brown);padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden;cursor:pointer;transition:opacity 0.15s}
+    .vp-geo-top:hover{opacity:0.85}
+    .vp-geo-circle{position:absolute;right:-30px;bottom:-30px;width:130px;height:130px;border-radius:50%;background:var(--red);opacity:0.45;pointer-events:none}
     .vp-hero-card-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:0.65rem}
     .vp-hero-card-title{font-size:1.1rem;font-weight:700;color:var(--brown);line-height:1.35;margin-bottom:0.65rem;letter-spacing:0.01em}
     .vp-hero-card-excerpt{font-size:0.82rem;line-height:1.8;color:var(--brown-mid)}
-    .vp-geo-bot{background:var(--green-dim);padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden}
-    .vp-geo-rect{position:absolute;right:0;top:0;width:28px;height:100%;background:var(--green);opacity:0.5}
+    .vp-geo-bot{background:var(--green-dim);padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden;cursor:pointer;transition:opacity 0.15s}
+    .vp-geo-bot:hover{opacity:0.85}
+    .vp-geo-rect{position:absolute;right:0;top:0;width:28px;height:100%;background:var(--green);opacity:0.5;pointer-events:none}
     .vp-section{padding:2.5rem 2.75rem;border-bottom:2px solid var(--brown)}
     .vp-section-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
     .vp-section-title{font-size:0.75rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;white-space:nowrap;color:var(--brown)}
     .vp-section-line{flex:1;height:2px;background:var(--brown)}
     .vp-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-    .vp-post{border:2px solid var(--brown);margin-left:-2px;background:var(--cream);transition:background 0.15s}
+    .vp-post{border:2px solid var(--brown);margin-left:-2px;background:var(--cream);transition:background 0.15s;cursor:pointer}
     .vp-post:hover{background:#E2DBCA}
     .vp-post-stripe{height:7px}
     .vp-post-body{padding:1.5rem 1.35rem}
@@ -61,111 +67,176 @@
     .vp-footer{padding:1.25rem 2.75rem;display:flex;justify-content:space-between;align-items:center}
     .vp-footer-logo{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown)}
     .vp-footer-note{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown-mid)}
+
+    /* ── POST VIEW ── */
+    #post-view{display:none}
+    .post-header{padding:1.5rem 2.75rem;border-bottom:2px solid var(--brown);display:flex;align-items:center;gap:1.5rem}
+    .post-back{font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);cursor:pointer;border:2px solid var(--brown);padding:0.45rem 1rem;transition:background 0.15s,color 0.15s}
+    .post-back:hover{background:var(--brown);color:var(--cream)}
+    .post-category{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cream);padding:0.3rem 0.85rem}
+    .post-body{max-width:680px;margin:0 auto;padding:4rem 2.75rem 5rem}
+    .post-meta{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--brown-mid);margin-bottom:1.5rem}
+    .post-title{font-size:2.2rem;font-weight:700;line-height:1.1;text-transform:uppercase;letter-spacing:0.04em;color:var(--brown);margin-bottom:2.5rem}
+    .post-heading{font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brown);margin:2.5rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--brown)}
+    .post-paragraph{font-size:0.95rem;line-height:1.95;color:var(--brown-mid);margin-bottom:1.25rem}
+
+    .hidden{display:none}
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="vp-header">
-    <div class="vp-logo">VERBAL<span class="vp-logo-bar"></span>PROCESSOR</div>
+    <div class="vp-logo" onclick="showHome()">VERBAL<span class="vp-logo-bar"></span>PROCESSOR</div>
     <ul class="vp-nav">
-      <li><a href="#">Home</a></li>
+      <li><a onclick="showHome()">Home</a></li>
       <li><a href="#">Essays</a></li>
       <li><a href="#">Life</a></li>
       <li><a href="#">About</a></li>
     </ul>
   </header>
 
-  <section class="vp-hero">
-    <div class="vp-hero-left">
-      <div class="vp-hero-label">✦ Welcome</div>
-      <h1 class="vp-hero-title">THOUGHTS<br><span class="r">SPILLED</span><br>ONTO THE<br><span class="b">PAGE.</span></h1>
-      <p class="vp-hero-body">A personal corner of the internet where I write through things — feelings, decisions, coffee-fueled 2am realizations, and everything in between.</p>
-      <a href="#" class="vp-btn">Start Reading →</a>
-    </div>
-    <div class="vp-hero-right">
-      <div class="vp-geo-top">
-        <div class="vp-geo-circle"></div>
-        <div id="hero-latest"></div>
+  <!-- HOMEPAGE -->
+  <div id="home-view">
+    <section class="vp-hero">
+      <div class="vp-hero-left">
+        <div class="vp-hero-label">✦ Welcome</div>
+        <h1 class="vp-hero-title">THOUGHTS<br><span class="r">SPILLED</span><br>ONTO THE<br><span class="b">PAGE.</span></h1>
+        <p class="vp-hero-body">A personal corner of the internet where I write through things — feelings, decisions, coffee-fueled 2am realizations, and everything in between.</p>
+        <span class="vp-btn" onclick="scrollToPosts()">Start Reading →</span>
       </div>
-      <div class="vp-geo-bot">
-        <div class="vp-geo-rect"></div>
-        <div id="hero-prev"></div>
+      <div class="vp-hero-right">
+        <div class="vp-geo-top" id="hero-latest">
+          <div class="vp-geo-circle"></div>
+        </div>
+        <div class="vp-geo-bot" id="hero-prev">
+          <div class="vp-geo-rect"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vp-section" id="essays">
+      <div class="vp-section-head">
+        <div class="vp-section-title">Recent Essays</div>
+        <div class="vp-section-line"></div>
+      </div>
+      <div class="vp-posts" id="posts-grid"></div>
+    </section>
+
+    <div class="vp-about">
+      <div class="vp-about-left">
+        <div class="vp-about-label">About the writer</div>
+        <div class="vp-about-title">I Write To Figure Out What I Think.</div>
+        <div class="vp-about-body">Verbal Processor is a personal blog — no niche, no brand strategy, just honest writing about life as I'm living it. Based somewhere with good coffee and too many notebooks.</div>
+      </div>
+      <div class="vp-about-right">
+        <div class="vp-avatar">VP</div>
+        <div class="vp-avatar-note">the writer</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="vp-section">
-    <div class="vp-section-head">
-      <div class="vp-section-title">Recent Essays</div>
-      <div class="vp-section-line"></div>
+  <!-- POST VIEW -->
+  <div id="post-view">
+    <div class="post-header">
+      <div class="post-back" onclick="showHome()">← Back</div>
+      <span class="post-category" id="post-category-badge"></span>
     </div>
-    <div class="vp-posts" id="posts-grid"></div>
-  </section>
-
-  <div class="vp-about">
-    <div class="vp-about-left">
-      <div class="vp-about-label">About the writer</div>
-      <div class="vp-about-title">I Write To Figure Out What I Think.</div>
-      <div class="vp-about-body">Verbal Processor is a personal blog — no niche, no brand strategy, just honest writing about life as I'm living it. Based somewhere with good coffee and too many notebooks.</div>
-    </div>
-    <div class="vp-about-right">
-      <div class="vp-avatar">VP</div>
-      <div class="vp-avatar-note">the writer</div>
+    <div class="post-body">
+      <div class="post-meta" id="post-meta"></div>
+      <div class="post-title" id="post-title"></div>
+      <div id="post-content"></div>
     </div>
   </div>
 
   <footer class="vp-footer">
-    <div class="vp-footer-logo">VERBAL PROCESSOR</div>
+    <div class="vp-footer-logo" onclick="showHome()" style="cursor:pointer">VERBAL PROCESSOR</div>
     <div class="vp-footer-note">Made with words & warmth ✦</div>
   </footer>
 
   <script>
-    const COLORS = {
-      red:   'var(--red)',
-      blue:  'var(--blue)',
-      green: 'var(--green)'
-    };
+    const COLORS = { red:'var(--red)', blue:'var(--blue)', green:'var(--green)' };
+    let allPosts = [];
+
+    function showHome() {
+      document.getElementById('home-view').style.display = 'block';
+      document.getElementById('post-view').style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+
+    function scrollToPosts() {
+      document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openPost(index) {
+      const post = allPosts[index];
+      const color = COLORS[post.color] || COLORS.blue;
+
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-meta').textContent = post.date + ' · ' + post.readTime + ' min read';
+
+      const badge = document.getElementById('post-category-badge');
+      badge.textContent = post.category;
+      badge.style.background = color;
+
+      const contentEl = document.getElementById('post-content');
+      contentEl.innerHTML = post.content.map(block => {
+        if (block.type === 'heading') {
+          return `<div class="post-heading">${block.text}</div>`;
+        } else {
+          return `<p class="post-paragraph">${block.text}</p>`;
+        }
+      }).join('');
+
+      document.getElementById('home-view').style.display = 'none';
+      document.getElementById('post-view').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
 
     fetch('posts.json')
       .then(r => r.json())
       .then(data => {
-        // Hero panels — latest post + second most recent
-        const latest = data.posts[0];
-        const prev   = data.posts[1];
+        allPosts = data.posts;
 
-        document.getElementById('hero-latest').innerHTML = `
+        // Hero panels
+        const latestEl = document.getElementById('hero-latest');
+        latestEl.innerHTML += `
           <div class="vp-hero-card-tag">Latest Post · ${data.hero.date} · ${data.hero.readTime} min</div>
           <div class="vp-hero-card-title">${data.hero.title}</div>
           <div class="vp-hero-card-excerpt">${data.hero.excerpt}</div>
         `;
+        latestEl.addEventListener('click', () => openPost(0));
 
-        if (prev) {
-          document.getElementById('hero-prev').innerHTML = `
-            <div class="vp-hero-card-tag">Previously · ${prev.date} · ${prev.readTime} min</div>
-            <div class="vp-hero-card-title">${prev.title}</div>
-            <div class="vp-hero-card-excerpt">${prev.excerpt}</div>
+        const prevEl = document.getElementById('hero-prev');
+        if (data.posts[1]) {
+          prevEl.innerHTML += `
+            <div class="vp-hero-card-tag">Previously · ${data.posts[1].date} · ${data.posts[1].readTime} min</div>
+            <div class="vp-hero-card-title">${data.posts[1].title}</div>
+            <div class="vp-hero-card-excerpt">${data.posts[1].excerpt}</div>
           `;
+          prevEl.addEventListener('click', () => openPost(1));
         }
 
         // Posts grid
         const grid = document.getElementById('posts-grid');
-        data.posts.forEach(post => {
+        data.posts.forEach((post, i) => {
           const color = COLORS[post.color] || COLORS.blue;
-          grid.innerHTML += `
-            <div class="vp-post">
-              <div class="vp-post-stripe" style="background:${color}"></div>
-              <div class="vp-post-body">
-                <span class="vp-post-tag" style="background:${color}">${post.category}</span>
-                <div class="vp-post-title">${post.title}</div>
-                <div class="vp-post-excerpt">${post.excerpt}</div>
-                <div class="vp-post-meta">${post.date} · ${post.readTime} min read</div>
-              </div>
+          const card = document.createElement('div');
+          card.className = 'vp-post';
+          card.innerHTML = `
+            <div class="vp-post-stripe" style="background:${color}"></div>
+            <div class="vp-post-body">
+              <span class="vp-post-tag" style="background:${color}">${post.category}</span>
+              <div class="vp-post-title">${post.title}</div>
+              <div class="vp-post-excerpt">${post.excerpt}</div>
+              <div class="vp-post-meta">${post.date} · ${post.readTime} min read</div>
             </div>
           `;
+          card.addEventListener('click', () => openPost(i));
+          grid.appendChild(card);
         });
       });
   </script>
 
 </body>
 </html>
-
