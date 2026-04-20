@@ -49,21 +49,18 @@
       ]
     }, 
     {
-      "title": "Me",
+      "title": "Just Some Thoughts.",
       "category": "Ramblings",
-      "date": "Apr 5",
-      "readTime": "6",
-      "excerpt": "No phone, no agenda, just coffee and forty-five minutes of actually waking up.",
-      "color": "green",
+      "date": "Apr 20, 2026",
+      "readTime": "3",
+      "excerpt": "I actually feel like I have stopped thinking for a while now.",
+      "color": "blue",
       "content": [
-        { "type": "paragraph", "text": "Three weeks ago I decided to stop looking at my phone for the first forty-five minutes of the day. I want to report back." },
-        { "type": "heading", "text": "What I expected" },
-        { "type": "paragraph", "text": "Honestly I expected to feel virtuous and calm and like a person who has their life together. That's the version of this experiment I had seen online." },
-        { "type": "heading", "text": "What actually happened" },
-        { "type": "paragraph", "text": "The first few days were uncomfortable in a way I didn't anticipate. Not anxious exactly — more like bored. Which I think means the same thing." },
-        { "type": "paragraph", "text": "By week two something shifted. I started noticing the morning had texture. The coffee tasted like something. I had thoughts that weren't reactions to other people's thoughts." },
-        { "type": "heading", "text": "Week three" },
-        { "type": "paragraph", "text": "I'm not a convert. I don't think this makes me better. But I do think there's something to the idea that the first input of the day sets a tone. I'm still figuring out what tone I want to set." }
+        { "type": "paragraph", "text": "Just some thoughts from today." },
+        { "type": "paragraph", "text": "In fact, no — I actually feel like I have stopped thinking for a while now." },
+        { "type": "paragraph", "text": "I wish there was something deep, something enlightening that I could write in this post, but the reality is that I have been feeling estranged from my own self for some time. It's like life floats by, I do things, cash comes and goes, weekdays and weekends fly by forgotten, mornings are chilly, days are hot; suddenly it is mid-April and my clothing rack is still a dump of knitted sweaters, the kind with a couple of braids at the front or colored polyester fuzz on the inside; the blankets may be too warm for this time of the year but nights still feel cold every three times I wake up to check my phone, to check if everything is still under control as they say it should be, if I have not missed something while myself was wandering away, if I am playing the role alright; to check if my lines are still on time." },
+        { "type": "paragraph", "text": "There is a fog up in my head, somewhere in my heart, and all the way down in my ankles. Walking helps, but the tingly feeling comes back to haunt me as I stare down into the swirling tea." },
+        { "type": "paragraph", "text": "Perhaps it's just the weather. Perhaps it's as they say just an aftermath of stress. It's alright, nothing life-threatening; it's simply nothing, that's what it is; and nothing can be sometimes a heavy word to say." }
       ]
     },
     {
