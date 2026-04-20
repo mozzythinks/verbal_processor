@@ -20,7 +20,7 @@
         { "type": "paragraph", "text": "To the same tune that carries the sails of a dreamy fisherman in the azure" },
         { "type": "paragraph", "text": "To the same march that drums its way through wildbeests' stampedes" },
         { "type": "paragraph", "text": "To the same hum that echoes in the hearts of both this space and these seas" },
-        { "type": "paragraph", "text": "    " },
+        { "type": "heading", "text": "    " },
         { "type": "paragraph", "text": "A feather" },
         { "type": "paragraph", "text": "A leaf" },
         { "type": "paragraph", "text": "A tear" },
