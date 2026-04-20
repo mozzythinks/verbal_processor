@@ -26,7 +26,23 @@
         { "type": "paragraph", "text": "A tear" },
         { "type": "paragraph", "text": "All fall to the same chime that I heard on that lonely night when we learned" },
         { "type": "paragraph", "text": "That there is a song behind every fall" }
-
+      ]
+    },
+     {
+      "title": "A Rose",
+      "category": "Poetry",
+      "date": "Dec 1, 2021",
+      "readTime": "1",
+      "excerpt": "Yet rose nevertheless",
+      "color": "red",
+      "content": [
+        { "type": "paragraph", "text": "Nobody knows," },
+        { "type": "paragraph", "text": "That amongst the din of crowded buses," },
+        { "type": "paragraph", "text": "There is a rose" },
+        { "type": "paragraph", "text": "wrapped in a crackling brown sheet;" },
+        { "type": "paragraph", "text": "Too weak to awe the busy swarm with its fragile scent" },
+        { "type": "paragraph", "text": "Too bleak to daze or gather gazes;" },
+        { "type": "paragraph", "text": "Yet rose nevertheless." }
       ]
     },
     {
