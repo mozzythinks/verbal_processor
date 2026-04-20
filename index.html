@@ -80,6 +80,13 @@
     .post-heading{font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brown);margin:2.5rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--brown)}
     .post-paragraph{font-size:0.95rem;line-height:1.95;color:var(--brown-mid);margin-bottom:1.25rem}
 
+    /* ── CATEGORY FILTER (NEW) ── */
+    .vp-filters{display:flex;gap:0;margin-bottom:1.75rem;flex-wrap:wrap}
+    .vp-filter-btn{font-family:'Courier Prime',Courier,monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:0.4rem 1rem;border:2px solid var(--brown);margin-left:-2px;background:var(--cream);color:var(--brown);cursor:pointer;transition:background 0.15s,color 0.15s}
+    .vp-filter-btn:hover{background:var(--brown-mid);color:var(--cream)}
+    .vp-filter-btn.active{background:var(--brown);color:var(--cream)}
+    .vp-no-posts{font-size:0.85rem;color:var(--brown-mid);letter-spacing:0.08em;padding:1rem 0}
+
     .hidden{display:none}
   </style>
 </head>
@@ -90,8 +97,9 @@
     <div class="vp-logo" onclick="showHome()">VERBAL<span class="vp-logo-bar"></span>PROCESSOR</div>
     <ul class="vp-nav">
       <li><a onclick="showHome()">Home</a></li>
-      <li><a onclick="scrollToPosts()">Essays</a></li>
-      <li><a href="#">Life</a></li>
+      <li><a onclick="filterByCategory('Essays')">Essays</a></li>
+      <li><a onclick="filterByCategory('Life')">Life</a></li>
+      <li><a onclick="filterByCategory('Poetry')">Poetry</a></li>
       <li><a href="#">About</a></li>
     </ul>
   </header>
@@ -117,9 +125,11 @@
 
     <section class="vp-section" id="essays">
       <div class="vp-section-head">
-        <div class="vp-section-title">Recent Essays</div>
+        <div class="vp-section-title" id="section-label">All Posts</div>
         <div class="vp-section-line"></div>
       </div>
+      <!-- FILTER BUTTONS — built dynamically from categories in posts.json -->
+      <div class="vp-filters" id="filter-bar"></div>
       <div class="vp-posts" id="posts-grid"></div>
     </section>
 
@@ -127,7 +137,7 @@
       <div class="vp-about-left">
         <div class="vp-about-label">About the writer</div>
         <div class="vp-about-title">One place to keep all the writing I might want to look back on.</div>
-        <div class="vp-about-body">Memos, notes, essays, and everything in between. No real purpose - just words and throughts. </div>
+        <div class="vp-about-body">Memos, notes, essays, and everything in between. No real purpose - just words and thoughts.</div>
       </div>
       <div class="vp-about-right">
         <div class="vp-avatar">VP</div>
@@ -157,15 +167,60 @@
   <script>
     const COLORS = { red:'var(--red)', blue:'var(--blue)', green:'var(--green)' };
     let allPosts = [];
+    let activeFilter = 'All';
 
     function showHome() {
       document.getElementById('home-view').style.display = 'block';
       document.getElementById('post-view').style.display = 'none';
+      setFilter('All');
       window.scrollTo(0, 0);
     }
 
     function scrollToPosts() {
       document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Called from nav links — scrolls to posts and filters
+    function filterByCategory(cat) {
+      document.getElementById('home-view').style.display = 'block';
+      document.getElementById('post-view').style.display = 'none';
+      setFilter(cat);
+      setTimeout(() => {
+        document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
+
+    function setFilter(cat) {
+      activeFilter = cat;
+
+      // Update button states
+      document.querySelectorAll('.vp-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === cat);
+      });
+
+      // Update section label
+      document.getElementById('section-label').textContent =
+        cat === 'All' ? 'All Posts' : cat;
+
+      // Show/hide posts
+      const cards = document.querySelectorAll('.vp-post');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = cat === 'All' || card.dataset.category === cat;
+        card.style.display = match ? 'block' : 'none';
+        if (match) visible++;
+      });
+
+      // Show empty message if no posts in this category
+      let empty = document.getElementById('no-posts-msg');
+      if (!empty) {
+        empty = document.createElement('div');
+        empty.id = 'no-posts-msg';
+        empty.className = 'vp-no-posts';
+        empty.textContent = 'No posts in this category yet.';
+        document.getElementById('posts-grid').after(empty);
+      }
+      empty.style.display = visible === 0 ? 'block' : 'none';
     }
 
     function openPost(index) {
@@ -217,12 +272,25 @@
           prevEl.addEventListener('click', () => openPost(1));
         }
 
+        // Build filter buttons from unique categories
+        const categories = ['All', ...new Set(data.posts.map(p => p.category))];
+        const filterBar = document.getElementById('filter-bar');
+        categories.forEach(cat => {
+          const btn = document.createElement('button');
+          btn.className = 'vp-filter-btn' + (cat === 'All' ? ' active' : '');
+          btn.dataset.cat = cat;
+          btn.textContent = cat;
+          btn.addEventListener('click', () => setFilter(cat));
+          filterBar.appendChild(btn);
+        });
+
         // Posts grid
         const grid = document.getElementById('posts-grid');
         data.posts.forEach((post, i) => {
           const color = COLORS[post.color] || COLORS.blue;
           const card = document.createElement('div');
           card.className = 'vp-post';
+          card.dataset.category = post.category;
           card.innerHTML = `
             <div class="vp-post-stripe" style="background:${color}"></div>
             <div class="vp-post-body">
