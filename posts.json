@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "On Sitting With Uncertainty (And Why It's Actually Fine)",
+    "date": "Apr 18",
+    "readTime": "5",
+    "excerpt": "I used to think not-knowing was a problem to solve. Turns out it might be the most honest place to live from..."
+  },
+  "posts": [
+    {
+      "title": "The People Who Stay When You're Not Fun Anymore",
+      "category": "Relationships",
+      "date": "Apr 12",
+      "readTime": "4",
+      "excerpt": "A quiet appreciation for the ones who show up without a reason to impress you.",
+      "color": "red"
+    },
+    {
+      "title": "My Slow Morning Experiment: Week Three",
+      "category": "Daily Life",
+      "date": "Apr 5",
+      "readTime": "6",
+      "excerpt": "No phone, no agenda, just coffee and forty-five minutes of actually waking up.",
+      "color": "green"
+    },
+    {
+      "title": "Notes to Myself at 23 (From Myself at Now)",
+      "category": "Reflection",
+      "date": "Mar 28",
+      "readTime": "7",
+      "excerpt": "Some things I wish someone had said, and some things I wouldn't have heard anyway.",
+      "color": "blue"
+    }
+  ]
+}
