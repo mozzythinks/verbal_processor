@@ -8,7 +8,7 @@
   "posts": [
     {
       "title": "Falling",
-      "category": "Essays",
+      "category": "Poetry",
       "date": "Jul 20, 2022",
       "readTime": "2",
       "excerpt": "...that there is a song behind every fall...",
@@ -30,8 +30,27 @@
       ]
     },
     {
+      "title": "Dearest Last Year,",
+      "category": "Ramblings",
+      "date": "Jan 1, 2026",
+      "readTime": "3",
+      "excerpt": "I'll be an old me, but trying to be better.",
+      "color": "green",
+      "content": [
+        { "type": "paragraph", "text": "Dearest Last Year," },
+        { "type": "paragraph", "text": "You have not been the easiest one this time around, yet in my memory you will always be the most precious." },
+        { "type": "paragraph", "text": "Lessons were learned, tears were shed; but my soul is nourished now, as I’m not alone. I choose to remember the happiest of your days, and to look forward to many more." },
+        { "type": "paragraph", "text": "During your time, the man I am lucky to call my husband has taught me that love is patient and kind. In your 365 days, I’ve felt pain from some folks, but also the deepest love from him and the many other blessed people in my life." },
+        { "type": "paragraph", "text": "During your time, I’ve learned that love is truly always waiting; always a promise; always there." },
+        { "type": "paragraph", "text": "Thank you for letting me know this year what it feels to love and to be loved." },
+        { "type": "paragraph", "text": "Looking forward to the new you; meanwhile, as always, I‘ll be an old me, but trying to be better." }
+        { "type": "paragraph", "text": "Yours," }
+        { "type": "paragraph", "text": "Moz" }
+      ]
+    }, 
+    {
       "title": "Me",
-      "category": "Daily Life",
+      "category": "Ramblings",
       "date": "Apr 5",
       "readTime": "6",
       "excerpt": "No phone, no agenda, just coffee and forty-five minutes of actually waking up.",
