@@ -22,6 +22,7 @@
     .vp-nav{display:flex;gap:2rem;list-style:none}
     .vp-nav a{font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color 0.15s;cursor:pointer}
     .vp-nav a:hover{color:var(--blue)}
+    .vp-nav-mobile{display:none}
 
     /* ── HOMEPAGE ── */
     .vp-hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--brown)}
@@ -56,8 +57,8 @@
     .vp-post-title{font-size:0.98rem;font-weight:700;line-height:1.4;color:var(--brown);margin-bottom:0.6rem}
     .vp-post-excerpt{font-size:0.82rem;line-height:1.8;color:var(--brown-mid);margin-bottom:1rem}
     .vp-post-meta{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brown-mid)}
-    .vp-about{display:grid;grid-template-columns:3fr 1fr;border-bottom:2px solid var(--brown)}
-    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown)}
+    .vp-about{display:grid;grid-template-columns:3fr 1fr;border-bottom:2px solid var(--brown);align-items:start}
+    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown);overflow:visible}
     .vp-about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem}
     .vp-about-title{font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brown);margin-bottom:0.75rem}
     .vp-about-body{font-size:0.875rem;line-height:1.85;color:var(--brown-mid);max-width:520px}
@@ -80,7 +81,7 @@
     .post-heading{font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brown);margin:2.5rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--brown)}
     .post-paragraph{font-size:0.95rem;line-height:1.95;color:var(--brown-mid);margin-bottom:1.25rem}
 
-    /* ── CATEGORY FILTER (NEW) ── */
+    /* ── CATEGORY FILTER ── */
     .vp-filters{display:flex;gap:0;margin-bottom:1.75rem;flex-wrap:wrap}
     .vp-filter-btn{font-family:'Courier Prime',Courier,monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:0.4rem 1rem;border:2px solid var(--brown);margin-left:-2px;background:var(--cream);color:var(--brown);cursor:pointer;transition:background 0.15s,color 0.15s}
     .vp-filter-btn:hover{background:var(--brown-mid);color:var(--cream)}
@@ -88,6 +89,42 @@
     .vp-no-posts{font-size:0.85rem;color:var(--brown-mid);letter-spacing:0.08em;padding:1rem 0}
 
     .hidden{display:none}
+
+    /* ── MOBILE ── */
+    @media(max-width:680px){
+      .vp-header{padding:1rem 1.25rem}
+      .vp-logo{font-size:1.1rem;letter-spacing:0.14em}
+      .vp-nav{display:none}
+      .vp-nav-mobile{display:flex;flex-direction:column;gap:0;list-style:none;border-top:2px solid var(--brown)}
+      .vp-nav-mobile.open{display:flex}
+      .vp-nav-mobile a{font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);text-decoration:none;padding:0.85rem 1.25rem;border-bottom:1px solid var(--brown);cursor:pointer;display:block}
+      .vp-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+      .vp-hamburger span{display:block;width:22px;height:2px;background:var(--brown)}
+
+      .vp-hero{grid-template-columns:1fr}
+      .vp-hero-left{padding:2rem 1.25rem;border-right:none;border-bottom:2px solid var(--brown)}
+      .vp-hero-title{font-size:2.2rem}
+      .vp-hero-right{grid-template-rows:auto auto}
+      .vp-geo-top{padding:1.75rem 1.25rem}
+      .vp-geo-bot{padding:1.75rem 1.25rem}
+
+      .vp-section{padding:1.75rem 1.25rem}
+      .vp-posts{grid-template-columns:1fr}
+      .vp-post{margin-left:0}
+
+      .vp-about{grid-template-columns:1fr}
+      .vp-about-left{padding:1.75rem 1.25rem;border-right:none;border-bottom:2px solid var(--brown)}
+      .vp-about-right{padding:1.5rem}
+
+      .post-header{padding:1rem 1.25rem}
+      .post-body{padding:2rem 1.25rem 3rem}
+      .post-title{font-size:1.6rem}
+
+      .vp-footer{padding:1rem 1.25rem;flex-direction:column;gap:0.5rem;text-align:center}
+
+      .vp-filters{gap:0}
+      .vp-filter-btn{margin-bottom:-2px}
+    }
   </style>
 </head>
 <body>
@@ -102,7 +139,19 @@
       <li><a onclick="filterByCategory('Poetry')">Poetry</a></li>
       <li><a href="#">About</a></li>
     </ul>
+    <!-- hamburger for mobile -->
+    <div class="vp-hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </header>
+  <!-- mobile nav (hidden until hamburger tapped) -->
+  <ul class="vp-nav-mobile" id="mobile-menu" style="display:none">
+    <li><a onclick="showHome();closeMenu()">Home</a></li>
+    <li><a onclick="filterByCategory('Essays');closeMenu()">Essays</a></li>
+    <li><a onclick="filterByCategory('Ramblings');closeMenu()">Ramblings</a></li>
+    <li><a onclick="filterByCategory('Poetry');closeMenu()">Poetry</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
 
   <!-- HOMEPAGE -->
   <div id="home-view">
@@ -128,7 +177,6 @@
         <div class="vp-section-title" id="section-label">All Posts</div>
         <div class="vp-section-line"></div>
       </div>
-      <!-- FILTER BUTTONS — built dynamically from categories in posts.json -->
       <div class="vp-filters" id="filter-bar"></div>
       <div class="vp-posts" id="posts-grid"></div>
     </section>
@@ -149,7 +197,7 @@
   <!-- POST VIEW -->
   <div id="post-view">
     <div class="post-header">
-      <div class="post-back" onclick="showHome()">← Back</div>
+      <div class="post-back" onclick="goBack()">← Back</div>
       <span class="post-category" id="post-category-badge"></span>
     </div>
     <div class="post-body">
@@ -168,6 +216,15 @@
     const COLORS = { red:'var(--red)', blue:'var(--blue)', green:'var(--green)' };
     let allPosts = [];
     let activeFilter = 'All';
+    let lastFilter = 'All';
+
+    function toggleMenu() {
+      const m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'none' ? 'flex' : 'none';
+    }
+    function closeMenu() {
+      document.getElementById('mobile-menu').style.display = 'none';
+    }
 
     function showHome() {
       document.getElementById('home-view').style.display = 'block';
@@ -176,11 +233,22 @@
       window.scrollTo(0, 0);
     }
 
+    function goBack() {
+      document.getElementById('home-view').style.display = 'block';
+      document.getElementById('post-view').style.display = 'none';
+      // restore the filter that was active before opening the post
+      setFilter(lastFilter);
+      window.scrollTo(0, 0);
+      // scroll back to the posts section
+      setTimeout(() => {
+        document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
+
     function scrollToPosts() {
       document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Called from nav links — scrolls to posts and filters
     function filterByCategory(cat) {
       document.getElementById('home-view').style.display = 'block';
       document.getElementById('post-view').style.display = 'none';
@@ -193,16 +261,13 @@
     function setFilter(cat) {
       activeFilter = cat;
 
-      // Update button states
       document.querySelectorAll('.vp-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.cat === cat);
       });
 
-      // Update section label
       document.getElementById('section-label').textContent =
         cat === 'All' ? 'All Posts' : cat;
 
-      // Show/hide posts
       const cards = document.querySelectorAll('.vp-post');
       let visible = 0;
       cards.forEach(card => {
@@ -211,7 +276,6 @@
         if (match) visible++;
       });
 
-      // Show empty message if no posts in this category
       let empty = document.getElementById('no-posts-msg');
       if (!empty) {
         empty = document.createElement('div');
@@ -224,6 +288,9 @@
     }
 
     function openPost(index) {
+      // remember which filter was active so Back can restore it
+      lastFilter = activeFilter;
+
       const post = allPosts[index];
       const color = COLORS[post.color] || COLORS.blue;
 
@@ -253,7 +320,6 @@
       .then(data => {
         allPosts = data.posts;
 
-        // Hero panels
         const latestEl = document.getElementById('hero-latest');
         latestEl.innerHTML += `
           <div class="vp-hero-card-tag">Latest Post · ${data.hero.date} · ${data.hero.readTime} min</div>
@@ -272,7 +338,6 @@
           prevEl.addEventListener('click', () => openPost(1));
         }
 
-        // Build filter buttons from unique categories
         const categories = ['All', ...new Set(data.posts.map(p => p.category))];
         const filterBar = document.getElementById('filter-bar');
         categories.forEach(cat => {
@@ -284,7 +349,6 @@
           filterBar.appendChild(btn);
         });
 
-        // Posts grid
         const grid = document.getElementById('posts-grid');
         data.posts.forEach((post, i) => {
           const color = COLORS[post.color] || COLORS.blue;
