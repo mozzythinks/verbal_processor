@@ -12,7 +12,16 @@
       "date": "Apr 12",
       "readTime": "4",
       "excerpt": "A quiet appreciation for the ones who show up without a reason to impress you.",
-      "color": "red"
+      "color": "red",
+      "content": [
+        { "type": "paragraph", "text": "There's a specific kind of person who shows up when you're not performing. Not when you've got a good story to tell or energy to burn, but when you're flat and quiet and kind of a drag to be around." },
+        { "type": "heading", "text": "The ones who don't need anything from you" },
+        { "type": "paragraph", "text": "Most friendships have an implicit transaction. You're funny, they laugh. You're going through it, they feel useful. You make plans, they have something to do on Saturday. It works. But it's still an exchange." },
+        { "type": "paragraph", "text": "The rare ones are different. They don't need you to be on. They'll sit with you on the couch and watch something neither of you care about and somehow that's enough." },
+        { "type": "heading", "text": "Why it matters more than we say" },
+        { "type": "paragraph", "text": "I think we undervalue this because it's quiet. It doesn't make a good story. Nobody posts about the friend who just... stayed. But I've started to think it's the whole thing. The metric that actually matters." },
+        { "type": "paragraph", "text": "If someone is still there when you're not fun anymore, that's the real thing. Everything else is a preview." }
+      ]
     },
     {
       "title": "My Slow Morning Experiment: Week Three",
@@ -20,7 +29,17 @@
       "date": "Apr 5",
       "readTime": "6",
       "excerpt": "No phone, no agenda, just coffee and forty-five minutes of actually waking up.",
-      "color": "green"
+      "color": "green",
+      "content": [
+        { "type": "paragraph", "text": "Three weeks ago I decided to stop looking at my phone for the first forty-five minutes of the day. I want to report back." },
+        { "type": "heading", "text": "What I expected" },
+        { "type": "paragraph", "text": "Honestly I expected to feel virtuous and calm and like a person who has their life together. That's the version of this experiment I had seen online." },
+        { "type": "heading", "text": "What actually happened" },
+        { "type": "paragraph", "text": "The first few days were uncomfortable in a way I didn't anticipate. Not anxious exactly — more like bored. Which I think means the same thing." },
+        { "type": "paragraph", "text": "By week two something shifted. I started noticing the morning had texture. The coffee tasted like something. I had thoughts that weren't reactions to other people's thoughts." },
+        { "type": "heading", "text": "Week three" },
+        { "type": "paragraph", "text": "I'm not a convert. I don't think this makes me better. But I do think there's something to the idea that the first input of the day sets a tone. I'm still figuring out what tone I want to set." }
+      ]
     },
     {
       "title": "Notes to Myself at 23 (From Myself at Now)",
@@ -28,7 +47,17 @@
       "date": "Mar 28",
       "readTime": "7",
       "excerpt": "Some things I wish someone had said, and some things I wouldn't have heard anyway.",
-      "color": "blue"
+      "color": "blue",
+      "content": [
+        { "type": "paragraph", "text": "I've been thinking about what I would tell a younger version of myself. Not the dramatic stuff — the small stuff. The things that would have actually helped." },
+        { "type": "heading", "text": "The anxiety is not a personality" },
+        { "type": "paragraph", "text": "It feels like one at 23. It feels like the truest thing about you. It is not. It is a habit your nervous system picked up somewhere and it can, slowly and with a lot of work, be put down." },
+        { "type": "heading", "text": "Not everyone has to get you" },
+        { "type": "paragraph", "text": "You are going to spend a lot of energy trying to explain yourself to people who are not curious about you. Stop. Find the ones who are curious. There are not many but they exist and they are worth everything." },
+        { "type": "heading", "text": "The thing you're avoiding is the thing" },
+        { "type": "paragraph", "text": "Whatever you keep putting off because it's not the right time — it's the right time. It was the right time six months ago. Do it small, do it badly, just do it." },
+        { "type": "paragraph", "text": "You won't listen to any of this. That's okay too." }
+      ]
     }
   ]
 }
