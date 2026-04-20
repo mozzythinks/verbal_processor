@@ -7,20 +7,26 @@
   },
   "posts": [
     {
-      "title": "fungi rule the world",
-      "category": "Relationships",
-      "date": "Apr 12",
-      "readTime": "4",
-      "excerpt": "A quiet appreciation for the ones who show up without a reason to impress you.",
+      "title": "Falling",
+      "category": "Poetry",
+      "date": "Jul 20, 2022",
+      "readTime": "2",
+      "excerpt": "...that there is a song behind every fall...",
       "color": "red",
       "content": [
-        { "type": "paragraph", "text": "When people lieag to be around." },
-        { "type": "heading", "text": "The ones who don't need anything from you" },
-        { "type": "paragraph", "text": "Most friendships have an implicit transaction. You're funny, they laugh. You're going through it, they feel useful. You make plans, they have something to do on Saturday. It works. But it's still an exchange." },
-        { "type": "paragraph", "text": "The rare ones are different. They don't need you to be on. They'll sit with you on the couch and watch something neither of you care about and somehow that's enough." },
-        { "type": "heading", "text": "Why it matters more than we say" },
-        { "type": "paragraph", "text": "I think we undervalue this because it's quiet. It doesn't make a good story. Nobody posts about the friend who just... stayed. But I've started to think it's the whole thing. The metric that actually matters." },
-        { "type": "paragraph", "text": "If someone is still there when you're not fun anymore, that's the real thing. Everything else is a preview." }
+        { "type": "paragraph", "text": "A feather" },
+        { "type": "paragraph", "text": "A leaf" },
+        { "type": "paragraph", "text": "Swing gently to the ground" },
+        { "type": "paragraph", "text": "To the same tune that carries the sails of a dreamy fisherman in the azure" },
+        { "type": "paragraph", "text": "To the same march that drums its way through wildbeests' stampedes" },
+        { "type": "paragraph", "text": "To the same hum that echoes in the hearts of both this space and this sea" },
+        { "type": "paragraph", "text": " " },
+        { "type": "paragraph", "text": "A feather" },
+        { "type": "paragraph", "text": "A leaf" },
+        { "type": "paragraph", "text": "A tear" },
+        { "type": "paragraph", "text": "All fall to the same chime that I heard on that lonely night when we learned" },
+        { "type": "paragraph", "text": "That there is a song behind every fall" },
+
       ]
     },
     {
@@ -44,7 +50,7 @@
     {
       "title": "Pursuit of Magic",
       "category": "Essays",
-      "date": "April 16, 2021",
+      "date": "Apr 16, 2021",
       "readTime": "10",
       "excerpt": "Some things I wish someone had said, and some things I wouldn't have heard anyway.",
       "color": "blue",
