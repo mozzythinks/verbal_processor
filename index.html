@@ -15,6 +15,11 @@
     }
     body{font-family:'Courier Prime',Courier,monospace;background:var(--cream);color:var(--brown);min-height:100vh}
 
+    /* ── VIEW SWITCHING via body class ── */
+    #post-view{display:none}
+    body.viewing-post #home-view{display:none}
+    body.viewing-post #post-view{display:block}
+
     /* ── HEADER ── */
     .vp-header{padding:1.5rem 2.75rem;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--brown)}
     .vp-logo{font-size:1.5rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown);cursor:pointer}
@@ -59,7 +64,7 @@
     .vp-post-excerpt{font-size:0.82rem;line-height:1.8;color:var(--brown-mid);margin-bottom:1rem}
     .vp-post-meta{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brown-mid)}
     .vp-about{display:grid;grid-template-columns:3fr 1fr;border-bottom:2px solid var(--brown);align-items:start}
-    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown);overflow:visible}
+    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown)}
     .vp-about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem}
     .vp-about-title{font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brown);margin-bottom:0.75rem}
     .vp-about-body{font-size:0.875rem;line-height:1.85;color:var(--brown-mid);max-width:100%}
@@ -71,7 +76,6 @@
     .vp-footer-note{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown-mid)}
 
     /* ── POST VIEW ── */
-    #post-view{display:none}
     .post-header{padding:1.5rem 2.75rem;border-bottom:2px solid var(--brown);display:flex;align-items:center;gap:1.5rem}
     .post-back{font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);cursor:pointer;border:2px solid var(--brown);padding:0.45rem 1rem;transition:background 0.15s,color 0.15s}
     .post-back:hover{background:var(--brown);color:var(--cream)}
@@ -219,15 +223,13 @@
     }
 
     function showHome() {
-      document.getElementById('home-view').style.display = 'block';
-      document.getElementById('post-view').style.display = 'none';
+      document.body.classList.remove('viewing-post');
       setFilter('All');
       window.scrollTo(0, 0);
     }
 
     function goBack() {
-      document.getElementById('post-view').style.display = 'none';
-      document.getElementById('home-view').style.display = 'block';
+      document.body.classList.remove('viewing-post');
       setFilter(lastFilter);
       setTimeout(() => {
         document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
@@ -239,8 +241,7 @@
     }
 
     function filterByCategory(cat) {
-      document.getElementById('home-view').style.display = 'block';
-      document.getElementById('post-view').style.display = 'none';
+      document.body.classList.remove('viewing-post');
       setFilter(cat);
       setTimeout(() => {
         document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
@@ -249,17 +250,11 @@
 
     function setFilter(cat) {
       activeFilter = cat;
-
-      // Update button states
       document.querySelectorAll('.vp-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.cat === cat);
       });
-
-      // Update section label
       document.getElementById('section-label').textContent =
         cat === 'All' ? 'All Posts' : cat;
-
-      // Show/hide posts using class instead of inline style
       const cards = document.querySelectorAll('.vp-post');
       let visible = 0;
       cards.forEach(card => {
@@ -267,25 +262,20 @@
         card.classList.toggle('hidden', !match);
         if (match) visible++;
       });
-
       document.getElementById('no-posts-msg').style.display =
         visible === 0 ? 'block' : 'none';
     }
 
     function openPost(index) {
       lastFilter = activeFilter;
-
       const post = allPosts[index];
       const color = COLORS[post.color] || COLORS.blue;
-
       document.getElementById('post-title').textContent = post.title;
       document.getElementById('post-meta').textContent =
         post.date + ' · ' + post.readTime + ' min read';
-
       const badge = document.getElementById('post-category-badge');
       badge.textContent = post.category;
       badge.style.background = color;
-
       const contentEl = document.getElementById('post-content');
       contentEl.innerHTML = post.content.map(block => {
         if (block.type === 'heading') {
@@ -294,9 +284,7 @@
           return `<p class="post-paragraph">${block.text}</p>`;
         }
       }).join('');
-
-      document.getElementById('home-view').style.display = 'none';
-      document.getElementById('post-view').style.display = 'block';
+      document.body.classList.add('viewing-post');
       window.scrollTo(0, 0);
     }
 
