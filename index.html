@@ -233,17 +233,14 @@
       window.scrollTo(0, 0);
     }
 
-    function goBack() {
-      document.getElementById('home-view').style.display = 'block';
-      document.getElementById('post-view').style.display = 'none';
-      // restore the filter that was active before opening the post
-      setFilter(lastFilter);
-      window.scrollTo(0, 0);
-      // scroll back to the posts section
-      setTimeout(() => {
-        document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
-      }, 50);
-    }
+function goBack() {
+  document.getElementById('home-view').style.display = 'block';
+  document.getElementById('post-view').style.display = 'none';
+  setFilter(lastFilter);
+  setTimeout(() => {
+    document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+}
 
     function scrollToPosts() {
       document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
