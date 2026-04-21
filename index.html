@@ -51,17 +51,18 @@
     .vp-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
     .vp-post{border:2px solid var(--brown);margin-left:-2px;background:var(--cream);transition:background 0.15s;cursor:pointer}
     .vp-post:hover{background:#E2DBCA}
+    .vp-post.hidden{display:none}
     .vp-post-stripe{height:7px}
     .vp-post-body{padding:1.5rem 1.35rem}
     .vp-post-tag{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);padding:0.18rem 0.65rem;margin-bottom:0.85rem}
     .vp-post-title{font-size:0.98rem;font-weight:700;line-height:1.4;color:var(--brown);margin-bottom:0.6rem}
     .vp-post-excerpt{font-size:0.82rem;line-height:1.8;color:var(--brown-mid);margin-bottom:1rem}
     .vp-post-meta{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brown-mid)}
-    .vp-about{display:grid;grid-template-columns:3fr 1fr;border-bottom:2px solid var(--brown)}
-    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown)}
+    .vp-about{display:grid;grid-template-columns:3fr 1fr;border-bottom:2px solid var(--brown);align-items:start}
+    .vp-about-left{padding:2.5rem 2.75rem;border-right:2px solid var(--brown);overflow:visible}
     .vp-about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem}
     .vp-about-title{font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brown);margin-bottom:0.75rem}
-    .vp-about-body{font-size:0.875rem;line-height:1.85;color:var(--brown-mid);max-width:100%px}
+    .vp-about-body{font-size:0.875rem;line-height:1.85;color:var(--brown-mid);max-width:100%}
     .vp-about-right{background:var(--red-dim);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:2rem}
     .vp-avatar{width:72px;height:72px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:var(--cream);border:2px solid var(--brown)}
     .vp-avatar-note{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown-mid);text-align:center}
@@ -86,9 +87,7 @@
     .vp-filter-btn{font-family:'Courier Prime',Courier,monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:0.4rem 1rem;border:2px solid var(--brown);margin-left:-2px;background:var(--cream);color:var(--brown);cursor:pointer;transition:background 0.15s,color 0.15s}
     .vp-filter-btn:hover{background:var(--brown-mid);color:var(--cream)}
     .vp-filter-btn.active{background:var(--brown);color:var(--cream)}
-    .vp-no-posts{font-size:0.85rem;color:var(--brown-mid);letter-spacing:0.08em;padding:1rem 0}
-
-    .hidden{display:none}
+    .vp-no-posts{font-size:0.85rem;color:var(--brown-mid);letter-spacing:0.08em;padding:1rem 0;display:none}
 
     /* ── MOBILE ── */
     @media(max-width:680px){
@@ -100,28 +99,22 @@
       .vp-nav-mobile a{font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);text-decoration:none;padding:0.85rem 1.25rem;border-bottom:1px solid var(--brown);cursor:pointer;display:block}
       .vp-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
       .vp-hamburger span{display:block;width:22px;height:2px;background:var(--brown)}
-
       .vp-hero{grid-template-columns:1fr}
       .vp-hero-left{padding:2rem 1.25rem;border-right:none;border-bottom:2px solid var(--brown)}
       .vp-hero-title{font-size:2.2rem}
       .vp-hero-right{grid-template-rows:auto auto}
       .vp-geo-top{padding:1.75rem 1.25rem}
       .vp-geo-bot{padding:1.75rem 1.25rem}
-
       .vp-section{padding:1.75rem 1.25rem}
       .vp-posts{grid-template-columns:1fr}
       .vp-post{margin-left:0}
-
       .vp-about{grid-template-columns:1fr}
       .vp-about-left{padding:1.75rem 1.25rem;border-right:none;border-bottom:2px solid var(--brown)}
       .vp-about-right{padding:1.5rem}
-
       .post-header{padding:1rem 1.25rem}
       .post-body{padding:2rem 1.25rem 3rem}
       .post-title{font-size:1.6rem}
-
       .vp-footer{padding:1rem 1.25rem;flex-direction:column;gap:0.5rem;text-align:center}
-
       .vp-filters{gap:0}
       .vp-filter-btn{margin-bottom:-2px}
     }
@@ -139,12 +132,10 @@
       <li><a onclick="filterByCategory('Poetry')">Poetry</a></li>
       <li><a href="#">About</a></li>
     </ul>
-    <!-- hamburger for mobile -->
     <div class="vp-hamburger" onclick="toggleMenu()" id="hamburger">
       <span></span><span></span><span></span>
     </div>
   </header>
-  <!-- mobile nav (hidden until hamburger tapped) -->
   <ul class="vp-nav-mobile" id="mobile-menu" style="display:none">
     <li><a onclick="showHome();closeMenu()">Home</a></li>
     <li><a onclick="filterByCategory('Essays');closeMenu()">Essays</a></li>
@@ -179,6 +170,7 @@
       </div>
       <div class="vp-filters" id="filter-bar"></div>
       <div class="vp-posts" id="posts-grid"></div>
+      <div class="vp-no-posts" id="no-posts-msg">No posts in this category yet.</div>
     </section>
 
     <div class="vp-about">
@@ -233,14 +225,14 @@
       window.scrollTo(0, 0);
     }
 
-function goBack() {
-  document.getElementById('home-view').style.display = 'block';
-  document.getElementById('post-view').style.display = 'none';
-  setFilter(lastFilter);
-  setTimeout(() => {
-    document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
-  }, 50);
-}
+    function goBack() {
+      document.getElementById('post-view').style.display = 'none';
+      document.getElementById('home-view').style.display = 'block';
+      setFilter(lastFilter);
+      setTimeout(() => {
+        document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
+      }, 80);
+    }
 
     function scrollToPosts() {
       document.getElementById('essays').scrollIntoView({ behavior: 'smooth' });
@@ -258,41 +250,37 @@ function goBack() {
     function setFilter(cat) {
       activeFilter = cat;
 
+      // Update button states
       document.querySelectorAll('.vp-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.cat === cat);
       });
 
+      // Update section label
       document.getElementById('section-label').textContent =
         cat === 'All' ? 'All Posts' : cat;
 
+      // Show/hide posts using class instead of inline style
       const cards = document.querySelectorAll('.vp-post');
       let visible = 0;
       cards.forEach(card => {
         const match = cat === 'All' || card.dataset.category === cat;
-        card.style.display = match ? 'block' : 'none';
+        card.classList.toggle('hidden', !match);
         if (match) visible++;
       });
 
-      let empty = document.getElementById('no-posts-msg');
-      if (!empty) {
-        empty = document.createElement('div');
-        empty.id = 'no-posts-msg';
-        empty.className = 'vp-no-posts';
-        empty.textContent = 'No posts in this category yet.';
-        document.getElementById('posts-grid').after(empty);
-      }
-      empty.style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('no-posts-msg').style.display =
+        visible === 0 ? 'block' : 'none';
     }
 
     function openPost(index) {
-      // remember which filter was active so Back can restore it
       lastFilter = activeFilter;
 
       const post = allPosts[index];
       const color = COLORS[post.color] || COLORS.blue;
 
       document.getElementById('post-title').textContent = post.title;
-      document.getElementById('post-meta').textContent = post.date + ' · ' + post.readTime + ' min read';
+      document.getElementById('post-meta').textContent =
+        post.date + ' · ' + post.readTime + ' min read';
 
       const badge = document.getElementById('post-category-badge');
       badge.textContent = post.category;
