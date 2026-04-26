@@ -46,6 +46,17 @@
       ]
     },
     {
+      "title": "26.04.25",
+      "category": "Ramblings",
+      "date": "Apr 26, 2026",
+      "readTime": "",
+      "excerpt": "I find staying happy difficult",
+      "color": "green",
+      "content": [
+        { "type": "paragraph", "text": "Sometimes I think about how I find staying happy difficult, and then nothing seems fair in this world." },
+      ]
+    },
+    {
       "title": "Dearest Last Year,",
       "category": "Ramblings",
       "date": "Jan 1, 2026",
@@ -84,7 +95,7 @@
       "category": "Essays",
       "date": "Apr 16, 2021",
       "readTime": "10",
-      "excerpt": "Some things I wish someone had said, and some things I wouldn't have heard anyway.",
+      "excerpt": "We all have felt the magic of childlike wonder.",
       "color": "blue",
       "content": [
         { "type": "paragraph", "text": "We all have felt the magic of childlike wonder." },
